@@ -1,0 +1,267 @@
+
+{% extends 'layout.html' %}
+
+{% block body %}
+      <!-- _______________________________________________
+            product section hover circular cursor 
+        ________________________________________________
+    -->
+    <div id="cursor"></div>
+
+    <!-- _______________________________________
+            main body section 
+        ________________________________________
+    -->
+    <div class="main">
+
+        <!-- ----------------------------------
+                company name on first
+        ----------------------------------- -->
+        <div class="page1">
+            <h1>EPYSE</h1>
+            <h1>EPRAYOSHI</h1>
+            <h1>EQUIPMENT</h1>
+        </div>
+
+        <!-- ----------------------------------
+                about section 
+        ----------------------------------- -->
+        <div class="page2" id="about">
+            <h2>WE BELIEVE IN PEOPLE, UNTIL THEY BELIEVE IN THEMSELVES AGAIN.</h2>
+            <div class="p-info">
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Officia ipsa perferendis quod labore
+                    veritatis expedita maiores in tenetur beatae aspernatur. Lorem ipsum dolor sit, amet consectetur
+                    adipisicing elit. Sint, commodi.</p>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Earum nobis, provident quam tenetur dicta
+                    aliquam corporis nemo vero veniam repudiandae blanditiis eaque deleniti fugit natus. Illo iusto non
+                    accusamus quisquam. Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus, consequatur.
+                </p>
+            </div>
+        </div>
+
+        <!-- ----------------------------------
+               sections heading 
+        ----------------------------------- -->
+        <div class="section-heading" id="products">
+            <h1>Our Products</h1>
+        </div>
+
+        <!-- ----------------------------------
+                product section 
+        ----------------------------------- -->
+        <div class="product">
+            {% for product in products %}
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="../static/images/{{product.imgurl}}" alt="">
+                </div>
+                <div class="button">
+                    <button><a href="/product/ghahgovahguaflknfsahfl/{{product.pID}}">Veiw Product</a></button>
+                </div>
+                <div class="product-name">{{product.name}}</div>
+          </div>
+            {% endfor %}
+            <!-- <div class="product-card">
+                <div class="product-img">
+                    <img src="../static/images/product-1.png" alt="">
+                </div>
+                <div class="button">
+                    <button>BUY NOW</button>
+                </div>
+                <div class="product-name">Home Security Services</div>
+            </div> -->
+            
+            <!--   <div class="product-card">
+                <div class="product-img">
+                    <img src="../static/images/product-3.png" alt="">
+                </div>
+                <div class="button">
+                    <button>BUY NOW</button>
+                </div>
+                <div class="product-name">WLC(Water Level Controller)</div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="../static/images/product-4.png" alt="">
+                </div>
+                <div class="button">
+                    <button>BUY NOW</button>
+                </div>
+                <div class="product-name">Quick Sense</div>
+            </div>
+            <div class="product-card">
+                <div class="product-img">
+                    <img src="../static/images/product-5.png" alt="">
+                </div>
+                <div class="button">
+                    <button>BUY NOW</button>
+                </div>
+                <div class="product-name">Water Power Saver(WPS)</div>
+            </div> -->
+        </div>
+
+        <!-- ----------------------------------
+                sections heading
+        ----------------------------------- -->
+        <div class="section-heading" id="testimonial">
+            <h1>Our Happy Customer</h1>
+        </div>
+
+        <!-- ----------------------------------
+                testimonial section 
+        ----------------------------------- -->
+        <div class="swiper mySwiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide">
+                    <div class="client-msg">
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius suscipit numquam provident
+                            necessitatibus quibusdam doloribus totam illum enim saepe! Consectetur!
+                        </p>
+                    </div>
+                    <div class="client-info">
+                        <figure>
+                            <img src="../static/images/happy client 1.jpg" alt="">
+                        </figure>
+                        <div class="client-name">
+                            <p>Jurica Koletić</p>
+                            <p>Entrepreneur</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="client-msg">
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius suscipit numquam provident
+                            necessitatibus quibusdam doloribus totam illum enim saepe! Consectetur!
+                        </p>
+                    </div>
+                    <div class="client-info">
+                        <figure>
+                            <img src="../static/images/happy client 2.jpg" alt="">
+                        </figure>
+                        <div class="client-name">
+                            <p>Jurica Koletić</p>
+                            <p>Entrepreneur</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="client-msg">
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius suscipit numquam provident
+                            necessitatibus quibusdam doloribus totam illum enim saepe! Consectetur!
+                        </p>
+                    </div>
+                    <div class="client-info">
+                        <figure>
+                            <img src="../static/images/happy client 3.jpg" alt="">
+                        </figure>
+                        <div class="client-name">
+                            <p>Jurica Koletić</p>
+                            <p>Entrepreneur</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="client-msg">
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius suscipit numquam provident
+                            necessitatibus quibusdam doloribus totam illum enim saepe! Consectetur!
+                        </p>
+                    </div>
+                    <div class="client-info">
+                        <figure>
+                            <img src="../static/images/happy client 4.jpg" alt="">
+                        </figure>
+                        <div class="client-name">
+                            <p>Jurica Koletić</p>
+                            <p>Entrepreneur</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="client-msg">
+                        <p>
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eius suscipit numquam provident
+                            necessitatibus quibusdam doloribus totam illum enim saepe! Consectetur!
+                        </p>
+                    </div>
+                    <div class="client-info">
+                        <figure>
+                            <img src="../static/images/happy client 5.jpg" alt="">
+                        </figure>
+                        <div class="client-name">
+                            <p>Jurica Koletić</p>
+                            <p>Entrepreneur</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+
+        <!-- ----------------------------------
+                sections heading
+        ----------------------------------- -->
+
+        <div class="section-heading" id="clients-heading">
+            <h1>Our Happy Clients</h1>
+        </div>
+
+        <!-- ----------------------------------
+                Clients section 
+        ----------------------------------- -->
+
+        <div class="customer">
+            <div class="customer-box">
+                <div id="customer-img">
+                    <img src="../static/images/yccelogo.png" alt="">
+                </div>
+                <div id="customer-img">
+                    <img src="../static/images/ajmera tyres.jpeg" alt="">
+                </div>
+                <div id="customer-img">
+                    <img src="../static/images/santoshpakodewala.jpeg" alt="">
+                </div>
+                <div id="customer-img">
+                    <img src="../static/images/nelsonhospital.jpg" alt="">
+                </div>
+                <div id="customer-img">
+                    <img src="../static/images/dattameghecollege.jpg" alt="">
+                </div>
+
+            </div>
+        </div>
+
+
+
+
+<!-- /* ____________________________________________________
+    Not required code but can be used further
+____________________________________________________ */ -->
+
+<!-- <div class="page3">
+            <div class="child child1">
+                <a href="./product page/1.html"><img src="./images/product-1.png" alt="home security system"></a>
+                <div class="info">Home Security System</div>
+            </div>
+            <div class="child child2">
+                <a href="./product page/1.html"><img src="./images/product-2.png" alt="automatic timer"></a>
+                <div class="info">Ototaima(Automatic Timer)</div>
+            </div>
+            <div class="child child3">
+                <a href="./product page/1.html"><img src="./images/product-3.png" alt="water level controller"></a>
+                <div class="info">WLC(Water Level Controller)</div>
+            </div>
+            <div class="child child4">
+                <a href="./product page/1.html"><img src="./images/product-4.png" alt="quick sense"></a>
+                <div class="info">Quick Sense</div>
+            </div>
+            <div class="child child5">
+                <a href="./product page/1.html"><img src="./images/product-5.png" alt="water power saver"></a>
+                <div class="info">Water Power Saver(WPS)</div>
+            </div>
+        </div> -->
+{% endblock %}
+  

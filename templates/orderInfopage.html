@@ -1,0 +1,94 @@
+{% extends 'layout.html' %}
+{% block  body %}
+
+<link rel="stylesheet" href="/static/css/orderInfopage.css">
+<div class="main">
+    <div class="container">
+        <h1 class="form-title">Delivery Details</h1>
+        <form action="/userDetails" method="post">
+          <div class="main-user-info">
+            <div class="user-input-box">
+              <label for="fullName"> Name</label>
+              <input type="text"
+                      id="fullName"
+                      name="fullName"
+                      placeholder="{{user.name}}"/>
+            </div>
+            <div class="user-input-box">
+              <label for="email">Email</label>
+              <input type="email"
+                      id="email"
+                      name="email"
+                      placeholder="{{user.email}}"/>
+            </div>
+            {% if user.mobileno is none %}
+            <div class="user-input-box">
+                <label for="phoneNumber">Phone Number</label>
+                <input name="phoneno" type="text"
+                        id="phoneNumber"
+                        name="phoneNumber"
+                        placeholder="Enter Phone Number"/>
+              </div>
+            {% else %}
+            <div class="user-input-box">
+                <label for="phoneNumber">Phone Number</label>
+                <input name="phoneno" type="text"
+                        id="phoneNumber"
+                        name="phoneNumber"
+                        placeholder="{{user.mobileno}}"/>
+              </div>
+            {% endif %}
+            
+            {% if user.pin is none %}
+            <div class="user-input-box">
+                <label for="phoneNumber">Area PIN</label>
+                <input name="pin" type="text"
+                        id="phoneNumber"
+                        name="phoneNumber"
+                        placeholder="Enter Area PIN"/>
+              </div>
+
+              {% else %}
+              <div class="user-input-box">
+                <label for="phoneNumber">Area PIN</label>
+                <input name="pin" type="text"
+                        id="phoneNumber"
+                        name="phoneNumber"
+                        placeholder="{{user.pin}}"/>
+              </div>
+            {% endif %}
+
+            {% if user.adrress is none %}
+            <div class="user-input-box address-input-box">
+                <label for="text">Your Address</label>
+                <input name="adrress" type="text"
+                        id="address"
+                        name="address"
+                        placeholder="Enter your address">
+            </div>
+            {% else %}
+            <div class="user-input-box address-input-box">
+                <label for="text">Your Address</label>
+                <input name="adrress" type="text"
+                        id="address"
+                        name="address"
+                        placeholder="{{user.adrress}}">
+            </div>
+            {% endif %}
+           
+            
+          </div>
+  
+  
+          <div class="form-submit-btn">
+            <input type="submit" value="Next">
+          </div>
+          <div class="form-submit-btn">
+            <input type="submit" value="Previous">
+          </div>
+        </form>
+    </div>
+</div>
+<script src="/static/js/orderInfoPage.js"></script>
+{% endblock %}
+  

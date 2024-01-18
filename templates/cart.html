@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+{% block body %}
+<link rel="stylesheet" href="/static/css/shoppingCartpage.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+
+<div class="main">
+    <div class="heading">
+        <h1>Your Shopping Cart</h1>
+        <div class="btn">
+            <button>View Other Products</button>
+        </div>
+    </div>
+
+    {% for item in cartitem %}
+    <div class="selected-item">
+        <div class="part-1">
+            <h2>{{item.pname}}</h2>
+        </div>
+        <div class="part-2">
+            <div class="counter">
+                <div class="minus">-</div>
+                <div class="quantity">{{item.quantity}}</div>
+                <div class="add">+</div>
+            </div>
+            <div class="btn">
+                <h2 class="total-amount">{{item.total}}</h2>
+            </div>
+        </div>
+        <a href="/delete/{{item.id}}">  <i class="fa-regular fa-trash-can delete-btn"></i></a>
+      
+    </div>
+    {% endfor %}
+   
+   
+    <div class="grand-total">
+        <h3>Total Amount : </h3>
+        <h2 class="grant-total-amount">1000</h2>
+        <div class="btn">
+            <a href="/userDetails"> <button>Check Out</button></a>
+           
+        </div>
+    </div>
+</div>
+
+
+
+<script src="/static/js/shoppingCartpage.js"></script>
+
+    
+{% endblock %}
+  

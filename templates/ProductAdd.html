@@ -1,0 +1,31 @@
+{% extends 'adminlayout.html' %}
+{% block body %}
+<link rel="stylesheet" href="../static/css/ProductAdd.css">
+   
+<div class="main--container">
+    <div class="heading">
+        <h2>Adding Product</h2>
+    </div>
+    <form action="/addProduct" method="post" enctype="multipart/form-data">
+        <label>Name: <input name="name" type="text"  id="fname"></label>
+
+        <label>MRP: <input type="number" name="mrp" ></label>
+
+        <label>Selling Price: <input type="number" name="sellingPrice" ></label>
+
+
+        <label>Stock: <input type="number" name="stock" ></label>
+
+        <label>Image: <input type="file" name="file" accept=".png" required></label>
+
+        <label>Desciption: <textarea name="tabDescription" cols="30" rows="10">
+        </textarea></label>
+
+        <!-- <button>Add to cart</button> -->
+        <input type="submit" id="submit">
+
+    </form>
+</div>
+</section>
+{% endblock %}
+  

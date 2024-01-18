@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EPYSE EPRAYOSHI EQUIPMENT</title>
+
+    <!-- ___________________________________
+             css link and cdn's
+        ____________________________________        
+    -->
+  
+   
+    <link rel="stylesheet" href="/static/css/homepage.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <!-- ____________________________________
+                     navigation bar 
+        _____________________________________
+    -->
+    <div class="nav">
+        <div class="logo">
+            <a href="/"> <img src="/static/images/logo.png" alt="company logo"></a>
+           
+        </div>
+        <div class="nav-links">
+            <i class="fa-solid fa-bars menu-icon"></i>
+            <a href="/cart"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+    </div>
+
+    <!-- ____________________________________
+                     menu container
+        _____________________________________
+    -->
+    <div class="menu-container hide-menu">
+        <div class="footer-menu">
+            <div class="social-media">
+                <h6>CONNECT WITH US</h6>
+                <a href="">
+                    <h6>Facebook</h6>
+                </a>
+                <a href="">
+                    <h6>Instagram</h6>
+                </a>
+                <a href="">
+                    <h6>Twitter</h6>
+                </a>
+                <a href="">
+                    <h6>LinkedIn</h6>
+                </a>
+                <a href="">
+                    <h6>YouTube</h6>
+                </a>
+            </div>
+            <div class="contact">
+                <p>Email : <a href="mailto:medtronicsequipment@gamil.com">medtronicsequipment@gamil.com</a></p>
+                <a href="tel:+919373611479">
+                    <p>9373611479</p>
+                </a>
+                <a href="tel:+918888157465">
+                    <p>8888157465</p>
+                </a>
+                <a href="tel:+919960855372">
+                    <p>9960855372</p>
+                </a>
+            </div>
+        </div>
+        <div class="menu-right">
+            <div class="upper">
+                <i class="fa-solid fa-x closs-menu"></i>
+            </div>
+            <div class="lower">
+                <a href="/">Home</a>
+                <a href="/about" class="about-link">About</a>
+                <a href="/products" class="product-link">Product</a>
+                <a href="/cart">View Cart</a>
+                {% if 'uid' in session %}
+                <a href="/logout">Sign Out</a>
+            {% else %}
+                <a href="/login">Sign In</a>
+            {% endif %}
+            </div>
+        </div>
+    </div>
+
+{% block body %}
+    
+{% endblock %}
+
+
+        <!-- ----------------------------------
+                footer section 
+        ----------------------------------- -->
+        <div class="line"></div>
+        <div class="footer">
+            <div class="social-media">
+                <h6>CONNECT WITH US</h6>
+                <a href="">
+                    <h6>Facebook</h6>
+                </a>
+                <a href="">
+                    <h6>Instagram</h6>
+                </a>
+                <a href="">
+                    <h6>Twitter</h6>
+                </a>
+                <a href="">
+                    <h6>LinkedIn</h6>
+                </a>
+                <a href="">
+                    <h6>YouTube</h6>
+                </a>
+            </div>
+            <div class="logo">
+                <img src="/static/images/logo.png" alt="company logo">
+            </div>
+            <div class="contact">
+                <p>Email : <a href="mailto:medtronicsequipment@gamil.com">medtronicsequipment</a></p>
+                <a href="tel:+919373611479">
+                    <p>9373611479</p>
+                </a>
+                <a href="tel:+918888157465">
+                    <p>8888157465</p>
+                </a>
+                <a href="tel:+919960855372">
+                    <p>9960855372</p>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ______________________________________
+            javascript link and cdn's
+        _______________________________________    
+    -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../static/js/homepage.js"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../static/js/productpage.js" type="text/javascript"></script>
+
+</body>
+
+</html>

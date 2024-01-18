@@ -1,0 +1,74 @@
+{% extends 'adminlayout.html' %}
+{% block body %}
+<link rel="stylesheet" href="../static/css/UpdatePage.css">
+
+<div class="main--container">
+    <table id="outputTable">
+        <tr>
+            <th>Sr.no</th>
+            <th>Name</th>
+            <th>MRP</th>
+            <TH>SP</TH>
+            <th>Stock</th>
+            <th>Update</th>
+            <th>Delete</th>
+        </tr>
+        {% for product in products %}
+        <tr>
+            <td>{{product.pID}}</td>
+            <td>{{product.name}}</td>
+            <td>{{product.mrp}}</td>
+            <td>{{product.sellingPrice}}</td>
+            <td>{{product.stock}}</td>
+            <td>
+                <a href="/updateProduct/{{product.pID}}" id="btn">Update</a>
+            </td>
+            <td>
+                <a href="/deleteProduct/{{product.pID}}" id="btn">Delete</a>
+            </td>
+
+        </tr>
+        <!-- {% endfor %} -->
+
+        <!-- <tr>
+            <td>2</td>
+            <td>ABC</td>
+            <td>100</td>
+            <td>
+                <a href="#" id="btn">Update</a>
+            </td>
+            <td>
+                <a href="#" id="btn">Delete</a>
+            </td>
+
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>ABC</td>
+            <td>100</td>
+            <td>
+                <a href="#" id="btn">Update</a>
+            </td>
+            <td>
+                <a href="#" id="btn">Delete</a>
+            </td>
+
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>ABC</td>
+            <td>100</td>
+            <td>
+                <a href="#" id="btn">Update</a>
+            </td>
+            <td>
+                <a href="#" id="btn">Delete</a>
+            </td>
+
+        </tr> -->
+    </table>
+
+
+</section>
+{% endblock %}
+   

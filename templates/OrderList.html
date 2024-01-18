@@ -1,0 +1,32 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<link rel="stylesheet" href="/static/css/OrderList.css">
+<div class="Order">
+
+    {% for order in orders|reverse %}
+    <div class="list">
+        <div class="cart1">
+            <div id="image">
+                <img src="/static/images/{{order.product_id}}.png" alt="">
+            </div>
+            <div id="product-name">
+                <h3>{{order.product_name}}</h3>
+            </div>
+        </div>
+        <div class="cart2">
+            <h3>&#8377 {{order.subtotal}}</h3>
+        </div>
+
+        <div class="cart3">
+            <h3>&#128994 Deliverd on Aug 23</h3>
+            <span>Your item has been deliverd</span>
+        </div>
+    </div>
+    {% endfor %}
+    
+   
+</div>
+{% endblock %}
+   
+

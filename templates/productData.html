@@ -1,0 +1,199 @@
+{% extends 'layout.html' %}
+{% block body %}
+      <!-- ___________________________________
+             css link and cdn's
+        ____________________________________        
+    -->
+
+    <link rel="stylesheet" href="/static/css/productpage.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+
+    <!-- ____________________________________
+                    product code
+        _____________________________________
+    -->
+
+    <div class="product">
+        <div id="img-container">
+            <img src="/static/images/{{product.imgurl}}" alt="" id="myimage">
+
+        </div>
+
+        <div class="case3">
+
+            <h2>{{product.name}}</h2>
+            <div class="coupen">
+                <span>Product Code: EC-9423</span>
+                {% if product.stock>0 %}
+                <span>Availability: In stock &#x2705;</span>
+                {% else %}
+                <span>Availability: Not In stock &#x2705;</span>
+                {% endif %}
+
+
+            </div>
+
+
+            <div class="price">
+                <span id="s"><del>M.R.P.:Rs.{{product.mrp}}</del></span>
+                <span id="rakam"><span>{{product.discount}}% off&nbsp;</span>Rs.{{product.sellingPrice}}</span>
+                <span id="s">&#40;Inclusive of Taxes&#41;</span>
+            </div>
+
+
+            <div class="wrapper">
+                <span class="minus">-</span>
+                <span class="num">01</span>
+                <span class="plus">+</span>
+            </div>
+
+            {% if alreadyInCart %}
+            <a href="/cart" class="btn">Go to Cart
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+            {% else %}
+            <a href="/addtocart/{{product.pID}}/1" class="btn">Add to cart
+                <i class="fa-solid fa-cart-shopping"></i>
+            </a>
+            {% endif %}
+           
+
+            </form>
+
+
+            <script>
+
+
+
+
+
+
+                document.addEventListener("DOMContentLoaded", function () {
+                    const plus = document.querySelector(".plus");
+                    const minus = document.querySelector(".minus");
+                    const num = document.querySelector(".num");
+
+                    let quantity = 1;
+
+                    plus.addEventListener("click", () => {
+                        quantity++;
+                        quantity = (quantity < 10) ? "0" + quantity : quantity;
+                        num.innerText = quantity;
+                        updateHref(quantity);
+                    });
+
+                    minus.addEventListener("click", () => {
+                        if (quantity > 1) {
+                            quantity--;
+                            quantity = (quantity < 10) ? "0" + quantity : quantity;
+                            num.innerText = quantity;
+                            updateHref(quantity);
+                        }
+                    });
+
+                    function updateHref(quantity) {
+                        const href = '/addtocart/{{product.pID}}/' + quantity;
+                        document.querySelector('.btn').href = href;
+                    }
+                });
+
+
+
+
+
+
+
+
+
+
+
+            </script>
+
+
+          
+        </div>
+    </div>
+
+    <!-- _______________________________________________
+           product description
+        ________________________________________________
+    -->
+
+
+    <div class="swip">
+        <div class="swip-info">
+            <div class="tab-content">
+                <h3>Desciption</h3>
+                <p>
+                    {{product.tabDescription}}
+                </p>
+
+                <h3 id="z">What exactly HSS Does ?</h3>
+                <ul id="alfa1">
+                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+                </ul>
+
+                <h3 id="z">Application of HSS</h3>
+                <ul id="alfa1">
+                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+                </ul>
+
+                <h3 id="z">Where to install HSS</h3>
+                <ul id="alfa1">
+                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+                    <li>Lorem ipsum dolor, sit amet consectetur adipisicing elit.</li>
+                </ul>
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+
+
+    <!-- _______________________________________________
+           other products
+        ________________________________________________
+    -->
+
+    <div class="product-head">
+        <div class="product-heading">
+            <h3>Other Products</h3>
+        </div>
+        <div class="product-box">
+            {% for product in products %}
+            <div class="card-product">
+                <img src="/static/images/{{product.imgurl}}" alt="">
+                <span>{{product.name}}</span>
+                <span id="price"> &#x20b9;{{product.sellingPrice}}</span>
+                <a href="/product/ghahgovahguaflknfsahfl/{{product.pID}}">Veiw Product</a>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+
+   
+
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"
+        integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../static/js/productpage.js" type="text/javascript"></script>
+{% endblock %}
+
+  

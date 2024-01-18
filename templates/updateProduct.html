@@ -1,0 +1,30 @@
+{% extends 'adminlayout.html' %}
+{% block body %}
+
+    <link rel="stylesheet" href="../static/css/ProductAdd.css">
+
+
+    <div class="heading">
+        <h2>Updating Product</h2>
+    </div>
+    <form action="/updateProduct/{{product.pID}}" method="post">
+        <label>Name: <input name="name" type="text"  id="fname" value="{{product.name}}"></label>
+
+        <label>MRP: <input type="number" name="mrp" value="{{product.mrp}}"></label>
+
+        <label>Selling Price: <input type="number" name="sellingPrice" value="{{product.sellingPrice}}"  ></label>
+
+
+        <label>Stock: <input type="number" name="stock" value="{{product.stock}}"></label>
+
+        <label>Image: <input type="text" name="imgurl" value="{{product.imgurl}}"> </label>
+
+        <label>Desciption: <textarea name="tabDescription" cols="30" rows="10" value="">{{product.tabDescription}}
+        </textarea></label>
+
+        <!-- <button>Add to cart</button> -->
+        <input type="submit" id="submit">
+
+    </form>
+    </section>
+{% endblock %}
